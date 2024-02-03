@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 12345678
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+file:
+  server-path: D:/upload-files/
+  client-path: /api/v1/image
+  base-url: http://localhost:8081${file.client-path}
+
+logging:
+  level:
+    org.springframework.security: trace
+    org.hibernate: info
+    org.hibernate.SQL: debug
+
+jwt:
+  expiration: 2h
+
+rsa:
+  issuer-uri: http://localhost:8081
+  public-key: classpath:certs/public-key.pem
+  private-key: classpath:certs/private-key.pem
+
+password:
+  encryption:
+    key: schoolmanagement
+
+server:
+  port: 8081
+
+
