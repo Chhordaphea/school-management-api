@@ -17,6 +17,7 @@ public class DashboardServiceImpl implements DashboardService{
         return DashboardResponse.builder()
                 .totalTeacher(data.getTotalTeacher())
                 .totalStudent(data.getTotalStudent())
+                .totalClass(data.getTotalClass())
                 .build();
     }
 }

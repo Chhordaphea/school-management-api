@@ -9,4 +9,8 @@ public interface IDashboardResponse {
 
     @Value("#{target.total_student}")
     Long getTotalStudent();
+
+    @Value("#{target.total_class}")
+    Long getTotalClass();
+
 }

@@ -17,9 +17,12 @@ public class DashboardResponse {
 
     private Long totalStudent;
 
+    private Long totalClass;
+
     @Builder
-    public DashboardResponse(Long totalTeacher, Long totalStudent) {
+    public DashboardResponse(Long totalTeacher, Long totalStudent, Long totalClass) {
         this.totalTeacher = totalTeacher;
         this.totalStudent = totalStudent;
+        this.totalClass = totalClass;
     }
 }

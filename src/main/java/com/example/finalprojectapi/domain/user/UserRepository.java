@@ -22,8 +22,12 @@ public interface UserRepository extends JpaRepository<User, Long> {
                  SELECT count(s.id) AS total_student
                    FROM tb_students s
                    WHERE s.created_by = ?1 and s.sts ='1'
+            ),t3 as (
+                 SELECT count(s.id) AS total_class
+                   FROM tb_classes s
+                   WHERE s.created_by = ?1 and s.sts ='1'
             )
-            SELECT * FROM t1,t2""")
+            SELECT * FROM t1,t2,t3 """)
     IDashboardResponse getDashboardData(Long userId);
 
 
